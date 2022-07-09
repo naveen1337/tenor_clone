@@ -2,14 +2,14 @@ import { GifBox, MainLayout, PageUIStatus } from "@components";
 import { PageProps } from "@types/app";
 import { useContext, useRef } from "react";
 
-import { HomeContext } from "./home-ctrl";
+import { SearchContext } from "./search-ctrl";
 import SeachGif from "./components/search-bar";
 import HomeSubtitle from "./components/subtitle";
 
 interface PropTypes extends PageProps {}
 
-export default function HomePageUI(props: PropTypes) {
-  const ctx = useContext(HomeContext);
+export default function SearchPageUI(props: PropTypes) {
+  const ctx = useContext(SearchContext);
 
   if (props.pageLoading || !ctx) {
     return <PageUIStatus error={false} />;
@@ -29,15 +29,16 @@ export default function HomePageUI(props: PropTypes) {
         />
         <div className="px-24">
           <div>
-            <HomeSubtitle text={"Featured Gifs"} />
+            <HomeSubtitle text={` Gifs`} />
             <div className="columns-5 gap-2 break-inside-avoid-column">
-              {ctx.featured.map((item: any) => {
-                return (
-                  <div key={item.image} className="m-4 break-inside-avoid">
-                    <GifBox id={item.name} gifurl={item.image} />
-                  </div>
-                );
-              })}
+              {ctx.results &&
+                ctx.results.map((item: any) => {
+                  return (
+                    <div key={item.id} className="m-4 break-inside-avoid">
+                      <GifBox id={item.id} gifurl={item.media[0].tinygif.url} />
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </div>
