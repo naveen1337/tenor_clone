@@ -7,7 +7,7 @@ interface PropTypes {
   children: React.ReactNode;
 }
 
-export default function   MainLayout(props: PropTypes) {
+export default function MainLayout(props: PropTypes) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -15,6 +15,9 @@ export default function   MainLayout(props: PropTypes) {
     <div>
       <PageHeader />
       <div>{props.children}</div>
+      <div className="mt-4 py-4 bg-primary">
+        <p className="text-xs uppercase text-center text-white">made by Sofia-2022</p>
+      </div>
     </div>
   );
 }

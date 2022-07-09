@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 interface PropTypes {
   data?: any;
@@ -10,7 +10,9 @@ export default function PageHeader(props: PropTypes) {
   const dispatch = useDispatch();
   return (
     <div className="flex justify-between items-center p-3">
-      <p className="font-bold text-3xl">tenor</p>
+      <NavLink to="/">
+        <p className="font-bold text-3xl">tenor</p>
+      </NavLink>
       <button className="bg-primary px-8 py-2 rounded text-white font-white text-base">
         Sign in
       </button>

@@ -5,7 +5,7 @@ interface PropTypes {
   text: string;
 }
 
-export default function HomeSubtitle(props: PropTypes) {
+export default function Subtitle(props: PropTypes) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   return (

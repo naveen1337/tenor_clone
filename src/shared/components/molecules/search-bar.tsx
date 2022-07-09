@@ -10,11 +10,11 @@ interface PropTypes {
 
 export default function SearchBar(props: PropTypes) {
   return (
-    <div className="bg-primary px-24 py-2 ">
-      <div className="bg-white p-2  relative shadow w-full flex items-center justify-between">
+    <div className="bg-primary px-4 md:px-24 py-3 ">
+      <div className="bg-white md:p-2  relative shadow w-full flex items-center justify-between">
         <form action=""></form>
         <input
-          className="p-2 flex-grow outline-none text-base font-med text-gray-800"
+          className=" p-2 md:p-2 flex-grow outline-none text-base font-med text-gray-800"
           type="text"
           value={props.keyword}
           onChange={(e) => props.setkeyWord(e.target.value)}
